@@ -15,18 +15,20 @@ class Checkout
     items_price.inject(&:+)
   end
 
+  def promotion_available?
+    !promotional_rules.empty? ? rule_included? : 'No promotions available'
+  end
+
+  private
+
   def items_price
     basket.map { |item| item.price }
   end
 
-  def promotion_available?
-    if !promotional_rules.empty?
-      promotional_rules.each { |rule|
-        return promotional_rules.include?(rule)
-      }
-    else
-      'No promotions available'
-    end
+  def rule_included?
+    promotional_rules.each { |rule|
+      return promotional_rules.include?(rule)
+    }
   end
 
 end
