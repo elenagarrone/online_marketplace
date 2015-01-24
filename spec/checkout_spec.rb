@@ -28,6 +28,12 @@ describe Checkout do
     expect(co.total).to eq(29.2)
   end
 
+  it 'should caluclate the total of the basket with the promotions' do
+    co.scan(lavender_heart)
+    co.scan(lavender_heart)
+    expect(co.total).to eq(17.0)
+  end
+
   it 'should know when it can apply a promotion' do
     expect(co.promotion_available?).to eq(true)
   end
