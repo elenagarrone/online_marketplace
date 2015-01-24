@@ -15,6 +15,8 @@ class Two_or_more_offer
   def apply(basket)
     if apply?(basket)
       basket.each { |item| return item.price = new_price }
+      total = basket.map { |item| item.price }.inject(&:+)
+      return total
     end
   end
 

@@ -14,14 +14,14 @@ describe Percent_off do
     expect(ten_percent_off.percentage).to eq(10)
   end
 
-  it 'shoud know when to apply itslef to the basket' do
-    4.times { co.scan(kids_tshirt)}
-    expect(ten_percent_off.apply?(co.pre_total)).to eq(true)
-  end
-
   it 'shoud know when it cannot apply itself to the basket' do
     co.scan(kids_tshirt)
     expect(ten_percent_off.apply?(co.pre_total)).to eq(false)
+  end
+
+  it 'shoud know when to apply itslef to the basket' do
+    4.times { co.scan(kids_tshirt)}
+    expect(ten_percent_off.apply?(co.pre_total)).to eq(true)
   end
 
   it 'should apply itself' do

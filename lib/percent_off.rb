@@ -8,14 +8,18 @@ class Percent_off
   end
 
   def apply?(total)
-    return total > amount
+    total > amount
   end
 
   def apply(total)
     if apply?(total)
-      calculate_percentage
-      percentage - amount
+      total = amount - discount
+      return total
     end
+  end
+
+  def discount
+    (percentage * amount) / 100
   end
 
 end

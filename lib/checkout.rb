@@ -26,7 +26,7 @@ class Checkout
   def pre_total
     items_price.inject(&:+)
   end
-  
+
   private
 
   def items_price
@@ -40,7 +40,7 @@ class Checkout
   end
 
   def apply_promotions
-    promotional_rules.each { |rule| rule.apply(basket) }
+    promotional_rules.each { |rule| return rule.apply(basket) }
   end
 
 end
