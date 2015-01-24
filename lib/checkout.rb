@@ -15,10 +15,12 @@ class Checkout
     items_price.inject(&:+)
   end
 
-  private
-
   def items_price
     basket.map { |item| item.price }
+  end
+
+  def promotions_apply?
+    promotional_rules.each { |rule| rule.check }
   end
 
 end
