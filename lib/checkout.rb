@@ -8,7 +8,17 @@ class Checkout
   end
 
   def scan(item)
-    basket << item 
+    basket << item
+  end
+
+  def total
+    items_price.inject(&:+)
+  end
+
+  private
+
+  def items_price
+    basket.map { |item| item.price }
   end
 
 end

@@ -20,4 +20,10 @@ describe Checkout do
     expect(co.basket).to eq([lavender_heart, kids_tshirt])
   end
 
+  it 'should caluclate the total of the basket' do
+    co.scan(lavender_heart)
+    co.scan(kids_tshirt)
+    expect(co.total).to eq(29.2)
+  end
+
 end
