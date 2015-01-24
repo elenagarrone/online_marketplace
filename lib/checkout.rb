@@ -23,6 +23,10 @@ class Checkout
     !promotional_rules.empty? ? rule_included? : 'No promotions available'
   end
 
+  def pre_total
+    items_price.inject(&:+)
+  end
+  
   private
 
   def items_price

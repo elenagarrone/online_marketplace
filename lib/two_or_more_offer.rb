@@ -13,7 +13,7 @@ class Two_or_more_offer
   end
 
   def apply(basket)
-    if  apply?(basket)
+    if apply?(basket)
       basket.each { |item| return item.price = new_price }
     end
   end
