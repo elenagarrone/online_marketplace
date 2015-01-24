@@ -14,6 +14,10 @@ describe Percent_off do
     expect(ten_percent_off.percentage).to eq(10)
   end
 
+  it 'should have an offer name' do
+    expect(ten_percent_off.offer_name).to eq('percent_off')
+  end
+
   it 'shoud know when it cannot apply itself to the basket' do
     co.scan(kids_tshirt)
     expect(ten_percent_off.apply?(co.pre_total)).to eq(false)

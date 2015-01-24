@@ -18,6 +18,10 @@ describe Two_or_more_offer do
     expect(two_or_more.new_price).to eq(8.50)
   end
 
+  it 'should have an offer name' do
+    expect(two_or_more.offer_name).to eq('two_or_more')
+  end
+
   it 'shoud know when it cannot apply itself to the basket' do
     co.scan(lavender_heart)
     expect(two_or_more.apply?(co.basket)).to eq(false)
@@ -32,7 +36,7 @@ describe Two_or_more_offer do
   it 'should apply itself' do
     co.scan(lavender_heart)
     co.scan(lavender_heart)
-    expect(two_or_more.apply(co.basket)).to eq(8.5)
+    expect(two_or_more.apply(co.basket)).to eq([8.5, 8.5])
   end
 
 end
