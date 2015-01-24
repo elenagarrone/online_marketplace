@@ -14,8 +14,10 @@ describe Two_or_more_offer do
     expect(two_or_more.new_price).to eq(8.50)
   end
 
-  # it 'should know when it can apply itself' do
-  #   expect(two_or_more.apply?(co.basket, co.promotional_rules)).to eq(true)
-  # end
+  it 'shoud know when to apply a promotion to the basket' do
+    co.scan(lavender_heart)
+    expect(two_or_more.apply?(co.basket)).to eq(false)
+
+  end
 
 end

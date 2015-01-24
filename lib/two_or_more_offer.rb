@@ -7,8 +7,9 @@ class Two_or_more_offer
     @new_price = new_price
   end
 
-  # def apply?(basket, promotional_rules)
-  #   promotional_rules.include?(self)
-  # end
+  def apply?(basket)
+    lavender_heart = basket.select { |item| item if item.name == 'Lavender heart' }
+    return lavender_heart.count >= 2
+  end
 
 end
