@@ -1,5 +1,4 @@
 require 'checkout'
-require 'two_or_more_offer'
 
 describe Checkout do
 

@@ -9,4 +9,8 @@ describe Two_or_more_offer do
     expect(two_or_more.item).to be(lavender_heart)
   end
 
+  it 'should know the new price to apply to the product' do
+    expect(two_or_more.new_price).to eq(8.50)
+  end
+
 end
