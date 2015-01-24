@@ -2,12 +2,12 @@ require 'checkout'
 
 describe Checkout do
 
-  let(:co) { Checkout.new([]) }
+  let(:co) { Checkout.new(['two_or_more', 'ten_percent_off']) }
   let(:lavender_heart) { Item.new('001', 'Lavender heart', 9.25) }
   let(:kids_tshirt) { Item.new('003', 'Kids T-shirt', 19.95) }
 
-  it 'should be initialized with an array of promotional rules' do
-    expect(co.promotional_rules).to eq([])
+  it 'should be initialized with some promotional rules' do
+    expect(co.promotional_rules).to eq(['two_or_more', 'ten_percent_off'])
   end
 
   it 'should have a basket' do
