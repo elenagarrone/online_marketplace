@@ -12,4 +12,10 @@ class Two_or_more_offer
     return lavender_heart.count >= 2
   end
 
+  def apply(basket)
+    if  apply?(basket)
+      basket.each { |item| item.price = new_price; return 'Applied' }
+    end
+  end
+
 end

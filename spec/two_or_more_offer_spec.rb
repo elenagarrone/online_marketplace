@@ -25,4 +25,10 @@ describe Two_or_more_offer do
     expect(two_or_more.apply?(co.basket)).to eq(true)
   end
 
+  it 'should apply itself' do
+    co.scan(lavender_heart)
+    co.scan(lavender_heart)
+    expect(two_or_more.apply(co.basket)).to eq('Applied')
+  end
+
 end
