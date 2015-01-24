@@ -7,4 +7,8 @@ class Two_or_more_offer
     @new_price = new_price
   end
 
+  # def apply?(basket, promotional_rules)
+  #   promotional_rules.include?(self)
+  # end
+
 end

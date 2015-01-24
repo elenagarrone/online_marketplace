@@ -19,8 +19,14 @@ class Checkout
     basket.map { |item| item.price }
   end
 
-  def promotions_apply?
-    promotional_rules.each { |rule| rule.check }
+  def promotion_available?
+    if !promotional_rules.empty?
+      promotional_rules.each { |rule|
+        return promotional_rules.include?(rule)
+      }
+    else
+      'No promotions available'
+    end
   end
 
 end

@@ -5,10 +5,11 @@ describe Checkout do
   let(:lavender_heart) { Item.new('001', 'Lavender heart', 9.25) }
   let(:kids_tshirt) { Item.new('003', 'Kids T-shirt', 19.95) }
   let(:two_or_more) { Two_or_more_offer.new(lavender_heart, 8.50) }
-  let(:co) { Checkout.new([two_or_more, 'ten_percent_off']) }
+  let(:co) { Checkout.new([two_or_more]) }
+  let(:co2) { Checkout.new([]) }
 
   it 'should be initialized with some promotional rules' do
-    expect(co.promotional_rules).to eq([two_or_more, 'ten_percent_off'])
+    expect(co.promotional_rules).to eq([two_or_more])
   end
 
   it 'should have a basket' do
@@ -28,9 +29,11 @@ describe Checkout do
   end
 
   it 'should know when it can apply a promotion' do
-    co.scan(lavender_heart)
-    co.scan(lavender_heart)
-    expect(co.promotions_apply?).to eq(true)
+    expect(co.promotion_available?).to eq(true)
+  end
+
+  it 'should know when it cannot apply a promotion' do
+    expect(co2.promotion_available?).to eq('No promotions available')
   end
 
 end
