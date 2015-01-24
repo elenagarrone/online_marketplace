@@ -22,6 +22,14 @@ describe Checkout do
     expect(co.basket).to eq([lavender_heart, kids_tshirt])
   end
 
+  it 'should know when it can apply a promotion' do
+    expect(co.promotion_available?).to eq(true)
+  end
+
+  it 'should know when it cannot apply a promotion' do
+    expect(co2.promotion_available?).to eq('No promotions available')
+  end
+
   it 'should caluclate the total of the basket' do
     co.scan(lavender_heart)
     co.scan(kids_tshirt)
@@ -32,14 +40,6 @@ describe Checkout do
     co.scan(lavender_heart)
     co.scan(lavender_heart)
     expect(co.total).to eq(17.0)
-  end
-
-  it 'should know when it can apply a promotion' do
-    expect(co.promotion_available?).to eq(true)
-  end
-
-  it 'should know when it cannot apply a promotion' do
-    expect(co2.promotion_available?).to eq('No promotions available')
   end
 
 end

@@ -15,7 +15,8 @@ class Checkout
     if promotion_available?
       apply_promotions
     end
-    return items_price.inject(&:+)
+    total = items_price.inject(&:+)
+    return total
   end
 
   def promotion_available?
