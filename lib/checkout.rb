@@ -2,8 +2,8 @@ class Checkout
 
   attr_reader :promotional_rules, :basket
 
-  def initialize(promotional_rules = [])
-    @promotional_rules = promotional_rules
+  def initialize(promotional)
+    @promotional_rules = promotional.rules
     @basket = []
   end
 

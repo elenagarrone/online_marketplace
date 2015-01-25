@@ -7,8 +7,15 @@ describe Checkout do
   let(:personalised_cufflinks ) { Item.new('002', 'Personalised cufflinks ', 45.0) }
   let(:two_or_more) { Two_or_more_offer.new(lavender_heart, 8.50) }
   let(:ten_percent_off) { Percent_off.new(10, 60.0) }
-  let(:co) { Checkout.new([two_or_more, ten_percent_off]) }
-  let(:co2) { Checkout.new([]) }
+  let(:promotional) { Promotional.new }
+  let(:promotional2) { Promotional.new }
+  let(:co) { Checkout.new(promotional) }
+  let(:co2) { Checkout.new(promotional2) }
+
+  before(:each) {
+    promotional.add(two_or_more)
+    promotional.add(ten_percent_off)
+  }
 
   it 'should be initialized with some promotional rules' do
     expect(co.promotional_rules).to eq([two_or_more, ten_percent_off])
