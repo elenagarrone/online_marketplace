@@ -1,7 +1,6 @@
 class Percent_off
 
   attr_reader :amount, :percentage, :offer_name
-  attr_accessor :discount
 
   def initialize(percentage, amount)
     @amount = amount
@@ -15,13 +14,9 @@ class Percent_off
 
   def apply(total)
     if apply?(total)
-      total = amount - discount
-      return total
-    end
-  end
+      final_total = total - ((percentage * total) / 100)
 
-  def discount
-    (percentage * amount) / 100
+    end
   end
 
 end
