@@ -14,6 +14,7 @@ class Checkout
   def total
     if promotion_available?
       apply_discount_on_item
+      #apply_discount_on_total
     end
     total = items_price.inject(&:+)
     total
@@ -44,15 +45,15 @@ class Checkout
   end
 
   # def apply_discount_on_total
-  #   rules_on_total[0].apply(basket)
+  #   print rules_on_total.map { |rule| rule.apply(total) } #stack too deep
   # end
 
   def rules_on_items
     promotional_rules.select { |rule| rule if rule.offer_name == 'two_or_more' }
   end
 
-  # def discount_on_total
-  #   promotional_rules.select { |rule| rule if rule == 'percent_off' }
-  # end
+  def rules_on_total
+    promotional_rules.select { |rule| rule if rule.offer_name == 'percent_off' }
+  end
 
 end
