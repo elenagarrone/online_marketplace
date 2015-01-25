@@ -4,4 +4,8 @@ class Promotional
     rules ||= []
   end
 
+  def rules_count
+    rules.count
+  end
+
 end
