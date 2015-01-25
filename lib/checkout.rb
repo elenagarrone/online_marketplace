@@ -15,7 +15,7 @@ class Checkout
     if promotion_available?
       apply_discount_on_item
     end
-    total = items_price.inject(&:+)
+    items_price.inject(&:+)
     # apply_discount_on_total
   end
 
