@@ -15,7 +15,7 @@ class Two_or_more_offer
 
   def apply(basket)
     if apply?(basket)
-      basket.map { |item| item.price = new_price if item.name == item_name }
+      basket.each { |item| item.price = new_price if item.name == item_name }
     end
   end
 

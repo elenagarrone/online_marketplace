@@ -17,10 +17,6 @@ class Checkout
       apply_discount_on_item
       return total
     end
-    if promotion_available?
-      apply_discount_on_item
-    end
-
   end
 
   def promotion_available?
@@ -39,24 +35,24 @@ class Checkout
 
   def rule_included?
     promotional_rules.each { |rule|
-      return promotional_rules.include?(rule)
+      return promotional_rules.include?(rule) #wrong return
     }
   end
 
   def apply_discount_on_item
-    print rules_on_items.map { |rule| rule.apply(basket) if rule != nil} 
+    print rules_on_items.map { |rule| rule.apply(basket) if rule != nil}
   end
 
-  def apply_discount_on_total
-    rules_on_total[0].apply(basket)
-  end
+  # def apply_discount_on_total
+  #   rules_on_total[0].apply(basket)
+  # end
 
   def rules_on_items
     promotional_rules.select { |rule| rule if rule.offer_name == 'two_or_more' }
   end
 
-  def discount_on_total
-    promotional_rules.select { |rule| rule if rule == 'percent_off' }
-  end
+  # def discount_on_total
+  #   promotional_rules.select { |rule| rule if rule == 'percent_off' }
+  # end
 
 end

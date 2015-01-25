@@ -28,15 +28,13 @@ describe Two_or_more_offer do
   end
 
   it 'shoud know when to apply itself to the basket' do
-    co.scan(lavender_heart)
-    co.scan(lavender_heart)
+    2.times { co.scan(lavender_heart) }
     expect(two_or_more.apply?(co.basket)).to eq(true)
   end
 
   it 'should apply itself' do
-    co.scan(lavender_heart)
-    co.scan(lavender_heart)
-    expect(two_or_more.apply(co.basket)).to eq([8.5, 8.5])
+    2.times { co.scan(lavender_heart) }
+    expect{ two_or_more.apply(co.basket) }.to change{ lavender_heart.price }.to(8.5)
   end
 
 end
