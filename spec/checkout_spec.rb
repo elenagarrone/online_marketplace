@@ -39,8 +39,7 @@ describe Checkout do
   end
 
   it 'should caluclate the total of the basket with the promotions (example 1)' do
-    co.scan(lavender_heart)
-    co.scan(lavender_heart)
+    2.times { co.scan(lavender_heart) }
     expect(co.total).to eq(17.0)
   end
 
