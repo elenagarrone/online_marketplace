@@ -1,6 +1,7 @@
 class Percent_off
 
   attr_reader :amount, :percentage, :offer_name
+  attr_accessor :discount
 
   def initialize(percentage, amount)
     @amount = amount

@@ -9,8 +9,8 @@ class Two_or_more_offer
   end
 
   def apply?(basket)
-    lavender_heart = basket.select { |item| item if item.name == item_name }
-    return lavender_heart.count >= 2
+    items_in_offer = basket.select { |item| item if item.name == item_name }
+    return items_in_offer.count >= 2
   end
 
   def apply(basket)
