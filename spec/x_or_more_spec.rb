@@ -23,8 +23,8 @@ describe X_or_more do
     expect(two_or_more.new_price).to eq(8.50)
   end
 
-  it 'should have an offer name' do
-    expect(two_or_more.offer_name).to eq('two_or_more')
+  it 'should have an offer type' do
+    expect(two_or_more.offer_type).to eq('on_item')
   end
 
   it 'shoud know when it cannot apply itself to the basket' do

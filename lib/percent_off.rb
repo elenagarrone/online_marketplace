@@ -1,11 +1,11 @@
 class Percent_off
 
-  attr_reader :amount, :percentage, :offer_name
+  attr_reader :amount, :percentage, :offer_type
 
   def initialize(percentage, amount)
     @amount = amount
     @percentage = percentage
-    @offer_name = 'percent_off'
+    @offer_type = 'on_total'
   end
 
   def apply?(pre_total)

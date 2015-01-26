@@ -20,7 +20,7 @@ describe Percent_off do
   end
 
   it 'should have an offer name' do
-    expect(ten_percent_off.offer_name).to eq('percent_off')
+    expect(ten_percent_off.offer_type).to eq('on_total')
   end
 
   it 'shoud know when it cannot apply itself to the basket' do

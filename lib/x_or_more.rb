@@ -1,12 +1,12 @@
 class X_or_more
 
-  attr_reader :item, :new_price, :offer_name, :min_number_of_items
+  attr_reader :item, :new_price, :offer_type, :min_number_of_items
 
   def initialize(min_number_of_items, item, new_price)
     @item = item
     @new_price = new_price
     @min_number_of_items = min_number_of_items
-    @offer_name = 'two_or_more'
+    @offer_type = 'on_item'
   end
 
   def apply?(basket)

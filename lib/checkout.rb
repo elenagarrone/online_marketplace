@@ -37,11 +37,11 @@ class Checkout
   end
 
   def rules_on_items
-    promotional_rules.select { |rule| rule if rule.offer_name == 'two_or_more' }
+    promotional_rules.select { |rule| rule if rule.offer_type == 'on_item' }
   end
 
   def rules_on_total
-    promotional_rules.select { |rule| rule if rule.offer_name == 'percent_off' }
+    promotional_rules.select { |rule| rule if rule.offer_type == 'on_total' }
   end
 
 end
