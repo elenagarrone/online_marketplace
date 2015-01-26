@@ -46,4 +46,4 @@ Example: `forty_percent_off = Percent_off.new(40, 100.0)`
 
 - ####If you buy x or more items then the price drops to £y
 #####`X_or_more.new(min_number_of_items, item, new_price)`
-Set the minimum number of items to buy to get the discount, specify to which item you want to apply it and set the new price.
+Set the minimum number of items to buy to get the discount, specify to which item you want to apply it and set the new price. Example: `four_or_more_tshirts = X_or_more.new(4, kids_tshirt, 15.99)`
