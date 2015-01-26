@@ -16,7 +16,7 @@ class Checkout
   end
 
   def total
-      apply_discount_on_total[0] || pre_total
+      apply_discount_on_total || pre_total
   end
 
   def pre_total
@@ -33,7 +33,8 @@ class Checkout
   end
 
   def apply_discount_on_total
-    rules_on_total.map { |rule| rule.apply(pre_total) }
+    array_of_totals = rules_on_total.map { |rule| rule.apply(pre_total) }
+    array_of_totals.min
   end
 
   def rules_on_items
