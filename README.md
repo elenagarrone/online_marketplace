@@ -51,5 +51,7 @@ Set the minimum number of items to buy to get the discount, specify to which ite
 How to create a new promotion:
 ------------------------------
 A promotion can be applied either to an item or to the total of the basket.
-To create a promotion you need to make a new class. Requirements:
-- it needs to be initialized with an `offer_type` which can be equal to `x_or_more_items` or `on_total`
+To create a promotion you need to <strong>make a new class</strong> which needs to follow these requirements:
+- it needs to be initialized with an `offer_type` which can be equal to `on_item` or `on_total`;
+- it has to have a method called `apply(basket)` or `apply(pre_total)`. Choose the first one if the offer_type is 'on_item' and the second one if the offer_type is 'on_total'.
+This method will contain the logic of the promotion.
