@@ -16,11 +16,18 @@ class Checkout
   end
 
   def total
-      apply_discount_on_total || pre_total
+    apply_discount_on_total || pre_total
   end
 
   def pre_total
     apply_discount_on_item
+    calculate_total
+  end
+
+
+private
+
+  def calculate_total
     items_price.inject(&:+).round(2)
   end
 
@@ -33,12 +40,19 @@ class Checkout
   end
 
   def apply_discount_on_total
-    array_of_amounts = rules_on_total.map { |rule| rule.apply?(pre_total) ? rule.amount : 0 }
-    array_of_totals = rules_on_total.map { |rule| rule.apply(pre_total) }
-    rules_amount = array_of_amounts.compact
-    totals = array_of_totals.compact
-    hash_of_amounts_totals = Hash[rules_amount.zip(totals)]
-    hash_of_amounts_totals.max_by{ |k,v| k }[1]
+    amounts_and_totals.max_by{ |k,v| k }[1]
+  end
+
+  def amounts_and_totals
+    Hash[rules_amount.zip(array_of_totals)]
+  end
+
+  def rules_amount
+    rules_on_total.map { |rule| rule.apply?(pre_total) ? rule.amount : 0 }
+  end
+
+  def array_of_totals
+    rules_on_total.map { |rule| rule.apply(pre_total) }.compact
   end
 
   def rules_on_items
