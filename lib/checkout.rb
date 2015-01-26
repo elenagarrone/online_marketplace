@@ -34,7 +34,7 @@ class Checkout
 
   def apply_discount_on_total
     array_of_totals = rules_on_total.map { |rule| rule.apply(pre_total) }
-    array_of_totals.min
+    array_of_totals.compact.min
   end
 
   def rules_on_items

@@ -86,4 +86,11 @@ describe Checkout do
     expect(co.total).to eq(81.00)
   end
 
+  it '2. should caluclate the total of the basket with the promotions (checking different promotions)' do
+    forty_percent_off = Percent_off_total.new(40, 200.0)
+    promotional.add(forty_percent_off)
+    3.times { co.scan(personalised_cufflinks) }
+    expect(co.total).to eq(121.50)
+  end
+
 end
