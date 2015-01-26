@@ -29,9 +29,13 @@ or run 'test_data.rb' to see how the checkout system works on three different ba
 $ ruby test_data.rb
 ```
 
-How to test it:
---------------
-From inside the directory run:
+How to test:
+------------
+If you need to install RSpec:
+```shell
+$ bundle install
+```
+then run it from inside the directory:
 ```shell
 $ rspec
 ```
