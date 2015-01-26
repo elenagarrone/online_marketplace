@@ -31,6 +31,13 @@ describe Checkout do
     expect(co.basket).to eq([lavender_heart, kids_tshirt])
   end
 
+  it 'should be able to clear the basket' do
+    co.scan(lavender_heart)
+    expect(co.basket).to eq([lavender_heart])
+    co.clear_basket
+    expect(co.basket).to eq([])
+  end
+
   it 'should caluclate the total of the basket' do
     co.scan(lavender_heart)
     co.scan(kids_tshirt)

@@ -11,6 +11,10 @@ class Checkout
     basket << item
   end
 
+  def clear_basket
+    basket.clear
+  end
+
   def total
       apply_discount_on_total[0] || pre_total
   end
