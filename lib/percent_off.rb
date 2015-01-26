@@ -14,7 +14,8 @@ class Percent_off
 
   def apply(pre_total)
     if apply?(pre_total)
-      pre_total - ((percentage * pre_total) / 100)
+      pre_total = pre_total - ((percentage * pre_total) / 100)
+      pre_total.round(2)
     end
   end
 

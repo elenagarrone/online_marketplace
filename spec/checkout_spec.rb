@@ -61,7 +61,7 @@ describe Checkout do
     co.scan(personalised_cufflinks)
     co.scan(lavender_heart)
     co.scan(kids_tshirt)
-    expect(co.total).to eq(73.755)
+    expect(co.total).to eq(73.76)
   end
 
 end

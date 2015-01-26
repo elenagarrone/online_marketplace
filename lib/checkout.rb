@@ -17,7 +17,7 @@ class Checkout
 
   def pre_total
     apply_discount_on_item
-    items_price.inject(&:+)
+    items_price.inject(&:+).round(2)
   end
 
   def items_price
