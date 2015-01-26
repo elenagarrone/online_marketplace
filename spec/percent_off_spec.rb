@@ -35,7 +35,6 @@ describe Percent_off do
 
   it 'should apply itself' do
     4.times { co.scan(kids_tshirt) }
-    print co.pre_total
     expect(ten_percent_off.apply(co.pre_total)).to eq(71.82)
   end
 

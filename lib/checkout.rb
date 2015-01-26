@@ -12,31 +12,16 @@ class Checkout
   end
 
   def total
-    if promotion_available?
-      apply_discount_on_item
-    end
-    items_price.inject(&:+)
-    # apply_discount_on_total
-  end
-
-  def promotion_available?
-    !promotional_rules.empty? ? rule_included? : 'No promotions available'
+    apply_discount_on_total
   end
 
   def pre_total
+    apply_discount_on_item
     items_price.inject(&:+)
   end
 
-  private
-
   def items_price
     basket.map { |item| item.price }
-  end
-
-  def rule_included?
-    promotional_rules.each { |rule|
-      return promotional_rules.include?(rule) #wrong return
-    }
   end
 
   def apply_discount_on_item
@@ -44,7 +29,7 @@ class Checkout
   end
 
   def apply_discount_on_total
-    print rules_on_total.map { |rule| rule.apply(total) } #stack too deep
+    rules_on_total.map { |rule| rule.apply(pre_total) }
   end
 
   def rules_on_items
