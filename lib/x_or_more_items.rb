@@ -1,4 +1,4 @@
-class X_or_more
+class X_or_more_items
 
   attr_reader :item, :new_price, :offer_type, :min_number_of_items
 

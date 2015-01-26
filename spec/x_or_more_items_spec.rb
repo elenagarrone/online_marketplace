@@ -1,9 +1,9 @@
-require 'x_or_more'
+require 'x_or_more_items'
 
-describe X_or_more do
+describe X_or_more_items do
 
   let(:lavender_heart) { Item.new('001', 'Lavender heart', 9.25) }
-  let(:two_or_more) { X_or_more.new(2, lavender_heart, 8.50) }
+  let(:two_or_more) { X_or_more_items.new(2, lavender_heart, 8.50) }
   let(:promotional) { Promotional.new }
   let(:co) { Checkout.new(promotional) }
 

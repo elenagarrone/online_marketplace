@@ -1,14 +1,14 @@
 require './lib/checkout'
 require './lib/item'
-require './lib/percent_off'
-require './lib/two_or_more_offer'
+require './lib/percent_off_total'
+require './lib/x_or_more_items'
 require './lib/promotional'
 
 lavender_heart          = Item.new('001', 'Lavender heart', 9.25)
 kids_tshirt             = Item.new('003', 'Kids T-shirt', 19.95)
 personalised_cufflinks  = Item.new('002', 'Personalised cufflinks ', 45.0)
-two_or_more             = Two_or_more_offer.new(lavender_heart, 8.50)
-ten_percent_off         = Percent_off.new(10, 60.0)
+ten_percent_off         = Percent_off_total.new(10, 60.0)
+two_or_more             = X_or_more_items.new(2, lavender_heart, 8.50)
 promotional             = Promotional.new
 co                      = Checkout.new(promotional)
 

@@ -1,4 +1,4 @@
-class Percent_off
+class Percent_off_total
 
   attr_reader :amount, :percentage, :offer_type
 

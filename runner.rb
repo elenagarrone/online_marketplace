@@ -1,5 +1,5 @@
 require './lib/checkout'
 require './lib/item'
-require './lib/percent_off'
-require './lib/x_or_more'
+require './lib/percent_off_total'
+require './lib/x_or_more_items'
 require './lib/promotional'

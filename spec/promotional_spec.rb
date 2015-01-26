@@ -4,7 +4,7 @@ describe Promotional do
 
   let(:promotional) { Promotional.new }
   let(:lavender_heart) { Item.new('001', 'Lavender heart', 9.25) }
-  let(:two_or_more) { X_or_more.new(2, lavender_heart, 8.50) }
+  let(:two_or_more) { X_or_more_items.new(2, lavender_heart, 8.50) }
 
   it 'should have an array of rules' do
     expect(promotional.rules).to eq([])
