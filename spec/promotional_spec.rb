@@ -4,7 +4,7 @@ describe Promotional do
 
   let(:promotional) { Promotional.new }
   let(:lavender_heart) { Item.new('001', 'Lavender heart', 9.25) }
-  let(:two_or_more) { Two_or_more_offer.new(lavender_heart, 8.50) }
+  let(:two_or_more) { X_or_more.new(2, lavender_heart, 8.50) }
 
   it 'should have an array of rules' do
     expect(promotional.rules).to eq([])
@@ -20,7 +20,7 @@ describe Promotional do
 
   it 'should be able to remove a rule' do
     promotional.add(two_or_more)
-    expect{ promotional.remove(two_or_more) }.to change{ promotional.rules_count }.by(-1) 
+    expect{ promotional.remove(two_or_more) }.to change{ promotional.rules_count }.by(-1)
   end
 
 end

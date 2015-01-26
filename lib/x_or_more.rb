@@ -1,16 +1,17 @@
-class Two_or_more_offer
+class X_or_more
 
-  attr_reader :item, :new_price, :offer_name
+  attr_reader :item, :new_price, :offer_name, :min_number_of_items
 
-  def initialize(item, new_price)
+  def initialize(min_number_of_items, item, new_price)
     @item = item
     @new_price = new_price
+    @min_number_of_items = min_number_of_items
     @offer_name = 'two_or_more'
   end
 
   def apply?(basket)
     items_in_offer = basket.select { |item| item if item.name == item_name }
-    return items_in_offer.count >= 2
+    return items_in_offer.count >= min_number_of_items
   end
 
   def apply(basket)
