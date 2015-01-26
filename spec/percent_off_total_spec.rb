@@ -17,7 +17,7 @@ describe Percent_off_total do
     expect(ten_percent_off.percentage).to eq(10)
   end
 
-  it 'should have an offer name' do
+  it 'should have an offer type' do
     expect(ten_percent_off.offer_type).to eq('on_total')
   end
 
@@ -31,7 +31,7 @@ describe Percent_off_total do
     expect(ten_percent_off.apply?(co.pre_total)).to eq(true)
   end
 
-  it 'should apply itself' do
+  it 'should apply itself to the total' do
     4.times { co.scan(kids_tshirt) }
     expect(ten_percent_off.apply(co.pre_total)).to eq(71.82)
   end

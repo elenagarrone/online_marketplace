@@ -44,7 +44,7 @@ describe Checkout do
 
   it 'should caluclate the total of the basket with the promotions' do
     2.times { co.scan(lavender_heart) }
-    expect(co.pre_total).to eq(17.0)
+    expect(co.total).to eq(17.0)
   end
 
   it '(Basket: 001,002,003) should caluclate the total of the basket with the promotions' do

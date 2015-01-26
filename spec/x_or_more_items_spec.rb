@@ -35,7 +35,7 @@ describe X_or_more_items do
     expect(two_or_more.apply?(co.basket)).to eq(true)
   end
 
-  it 'should apply itself' do
+  it 'should apply itself to the items' do
     2.times { co.scan(lavender_heart) }
     expect{ two_or_more.apply(co.basket) }.to change{ lavender_heart.price }.to(8.5)
   end
