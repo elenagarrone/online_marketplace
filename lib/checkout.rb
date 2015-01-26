@@ -33,8 +33,12 @@ class Checkout
   end
 
   def apply_discount_on_total
+    array_of_amounts = rules_on_total.map { |rule| rule.apply?(pre_total) ? rule.amount : 0 }
     array_of_totals = rules_on_total.map { |rule| rule.apply(pre_total) }
-    array_of_totals.compact.min
+    rules_amount = array_of_amounts.compact
+    totals = array_of_totals.compact
+    hash_of_amounts_totals = Hash[rules_amount.zip(totals)]
+    hash_of_amounts_totals.max_by{ |k,v| k }[1]
   end
 
   def rules_on_items
