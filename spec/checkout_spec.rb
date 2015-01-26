@@ -2,15 +2,13 @@ require 'checkout'
 
 describe Checkout do
 
-  let(:lavender_heart) { Item.new('001', 'Lavender heart', 9.25) }
-  let(:kids_tshirt) { Item.new('003', 'Kids T-shirt', 19.95) }
+  let(:lavender_heart)          { Item.new('001', 'Lavender heart', 9.25) }
+  let(:kids_tshirt)             { Item.new('003', 'Kids T-shirt', 19.95) }
   let(:personalised_cufflinks ) { Item.new('002', 'Personalised cufflinks ', 45.0) }
-  let(:two_or_more) { X_or_more_items.new(2, lavender_heart, 8.50) }
-  let(:ten_percent_off) { Percent_off_total.new(10, 60.0) }
-  let(:promotional) { Promotional.new }
-  let(:promotional2) { Promotional.new }
-  let(:co) { Checkout.new(promotional) }
-  let(:co2) { Checkout.new(promotional2) }
+  let(:two_or_more)             { X_or_more_items.new(2, lavender_heart, 8.50) }
+  let(:ten_percent_off)         { Percent_off_total.new(10, 60.0) }
+  let(:promotional)             { Promotional.new }
+  let(:co)                      { Checkout.new(promotional) }
 
   before(:each) {
     promotional.add(two_or_more)

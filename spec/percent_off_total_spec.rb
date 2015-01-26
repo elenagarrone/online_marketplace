@@ -3,9 +3,9 @@ require 'percent_off_total'
 describe Percent_off_total do
 
   let(:ten_percent_off) { Percent_off_total.new(10, 60.0) }
-  let(:kids_tshirt) { Item.new('003', 'Kids T-shirt', 19.95) }
-  let(:promotional) { Promotional.new }
-  let(:co) { Checkout.new(promotional) }
+  let(:kids_tshirt)     { Item.new('003', 'Kids T-shirt', 19.95) }
+  let(:promotional)     { Promotional.new }
+  let(:co)              { Checkout.new(promotional) }
 
   before(:each) {
     promotional.add(ten_percent_off)
