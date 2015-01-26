@@ -42,11 +42,26 @@ describe Checkout do
     expect(co.pre_total).to eq(17.0)
   end
 
-  # it 'should caluclate the total of the basket with the promotions ON TOTAL' do
-  #   co.scan(lavender_heart)
-  #   co.scan(personalised_cufflinks)
-  #   co.scan(kids_tshirt)
-  #   expect(co.total).to eq(66.78)
-  # end
+  it '(EXAMPLE 1) should caluclate the total of the basket with the promotions ON TOTAL' do
+    co.scan(lavender_heart)
+    co.scan(personalised_cufflinks)
+    co.scan(kids_tshirt)
+    expect(co.total).to eq(66.78)
+  end
+
+  it '(EXAMPLE 2) should caluclate the total of the basket with the promotions' do
+    co.scan(lavender_heart)
+    co.scan(kids_tshirt)
+    co.scan(lavender_heart)
+    expect(co.total).to eq(36.95)
+  end
+
+  it '(EXAMPLE 3) should caluclate the total of the basket with the promotions' do
+    co.scan(lavender_heart)
+    co.scan(personalised_cufflinks)
+    co.scan(lavender_heart)
+    co.scan(kids_tshirt)
+    expect(co.total).to eq(73.755)
+  end
 
 end

@@ -12,7 +12,7 @@ class Checkout
   end
 
   def total
-    apply_discount_on_total
+      apply_discount_on_total[0] || pre_total
   end
 
   def pre_total
