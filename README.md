@@ -9,7 +9,7 @@ Technologies:
 - Ruby
 - RSpec
 
-How to use
+How to use:
 ----------
 Clone the directory:
 ```shell
@@ -24,7 +24,7 @@ Play with it by running irb and requiring the runner file:
 $ irb
 > require './runner.rb'
 ```
-or run the 'test_data' file so that you can see the results:
+or run 'test_data.rb' to see how the checkout system works on three different baskets:
 ```shell
 $ ruby test_data.rb
 ```
@@ -38,7 +38,7 @@ $ rspec
 
 How to customize an existing promotion:
 ---------------------------------------
-- ####If you spend over £x, then you get y% off your purchase
+- ####If you spend over £ x, then you get y% off your purchase
 #####`Percent_off_total.new(percentage, amount)`
 All you need to do is to set the percentage you want to take off from the purchase and the minimum amount required to apply it. Example:
     ```shell
@@ -56,7 +56,7 @@ four_or_more_tshirts = X_or_more.new(4, kids_tshirt, 15.99)
 How to create a new promotion:
 ------------------------------
 A promotion can be applied either to an item or to the total of the basket.
-To create a promotion you need to make a <strong>new class</strong> which needs to follow these requirements:
+To create a promotion you need to <strong>make a new class</strong> which needs to follow these requirements:
 - it needs to be initialized with an `offer_type` which can be equal to `on_item` or `on_total`;
 - it has to have a method called `apply(basket)` or `apply(pre_total)`. Choose the first one if the offer_type is 'on_item' and the second one if the offer_type is 'on_total'.
 This method will contain the logic of the promotion.
