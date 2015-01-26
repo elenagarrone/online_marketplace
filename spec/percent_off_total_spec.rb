@@ -7,9 +7,7 @@ describe Percent_off_total do
   let(:promotional)     { Promotional.new }
   let(:co)              { Checkout.new(promotional) }
 
-  before(:each) {
-    promotional.add(ten_percent_off)
-  }
+  before(:each) { promotional.add(ten_percent_off) }
 
   it 'should know the price to which apply itself' do
     expect(ten_percent_off.amount).to eq(60.0)

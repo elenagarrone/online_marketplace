@@ -79,9 +79,7 @@ describe Checkout do
       expect(co.total).to eq(61.20)
     end
 
-    it 'three promotions on total are present' do
-      tewnty_percent_off = Percent_off_total.new(20, 100.0)
-      promotional.add(tewnty_percent_off)
+    it 'two promotions on total are present' do
       forty_percent_off = Percent_off_total.new(40, 130.0)
       promotional.add(forty_percent_off)
       3.times { co.scan(personalised_cufflinks) }

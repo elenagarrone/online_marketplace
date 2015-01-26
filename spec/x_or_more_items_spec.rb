@@ -7,9 +7,7 @@ describe X_or_more_items do
   let(:promotional)    { Promotional.new }
   let(:co)             { Checkout.new(promotional) }
 
-  before(:each) {
-    promotional.add(two_or_more)
-  }
+  before(:each) { promotional.add(two_or_more) }
 
   it 'should know the item to which apply the offer' do
     expect(two_or_more.item).to be(lavender_heart)
