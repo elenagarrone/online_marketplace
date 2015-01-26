@@ -25,7 +25,7 @@ class Checkout
   end
 
 
-private
+  private
 
   def calculate_total
     items_price.inject(&:+).round(2)

@@ -11,7 +11,7 @@ class X_or_more_items
 
   def apply?(basket)
     items_in_offer = basket.select { |item| item if item.name == item_name }
-    return items_in_offer.count >= min_number_of_items
+    items_in_offer.count >= min_number_of_items
   end
 
   def apply(basket)

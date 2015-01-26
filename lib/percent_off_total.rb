@@ -19,6 +19,7 @@ class Percent_off_total
       pre_total.round(2)
     end
   end
+  
 
   private
 
