@@ -69,4 +69,12 @@ describe Checkout do
     expect(co.total).to eq(73.76)
   end
 
+  it 'should caluclate the total of the basket with the promotions (checking different promotions)' do
+    four_or_more = X_or_more_items.new(4, kids_tshirt, 8.50)
+    promotional.add(four_or_more)
+    4.times { co.scan(lavender_heart) }
+    4.times { co.scan(kids_tshirt) }
+    expect(co.total).to eq(61.20)
+  end
+
 end
