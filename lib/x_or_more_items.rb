@@ -15,9 +15,7 @@ class X_or_more_items
   end
 
   def apply(basket)
-    if apply?(basket)
-      basket.each { |item| item.price = new_price if item.name == item_name }
-    end
+    basket.each { |item| item.price = new_price if item.name == item_name } if apply?(basket)
   end
 
   def item_name
